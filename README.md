@@ -176,63 +176,72 @@ numpy opencv-python   # also install pandas if needed
 ---
 
 ### 5️⃣ Clone the GitHub Repository
-Option A: SSH Key Setup (Recommended)
 
-1. Generate an SSH key on your VM:
+#### **Option A: SSH Key Setup (Recommended)**
 ```bash
+# Generate SSH key
 ssh-keygen -t ed25519 -C "nandanjunior@github"
-```
-Press Enter to accept defaults for file location.
+# Press Enter for defaults, Enter twice for no passphrase
 
-Press Enter twice for no passphrase.
-
-2. Copy your public key:
-```bash
+# Copy public key
 cat ~/.ssh/id_ed25519.pub
 ```
-
-Copy the entire output starting with ssh-ed25519.
-
-Add the public key to GitHub:
-
-Go to GitHub SSH Keys
-
-Title: Google Cloud CST435
-
-Key: paste the copied public key
-
-Click Add SSH key
-
-Test SSH connection: (optional)
+- Copy the **entire output** starting with `ssh-ed25519`.
+- Add to GitHub: [SSH Keys](https://github.com/settings/ssh/new)
+  - **Title:** Google Cloud CST435
+  - **Key:** paste copied key
+- Test SSH connection (optional):
 ```bash
 ssh -T git@github.com
 ```
-You should see:
-
+- Expected output:
+```
 Hi nandanjunior! You've successfully authenticated, but GitHub does not provide shell access.
+```
 
-✅ Once SSH is set up, you never need a password again.
-
-3. Clone the Repository
-Navigate to your home folder (or preferred location):
+- Clone the repository:
 ```bash
 cd ~
 git clone git@github.com:nandanjunior/cpc357-assg2.git
 cd cpc357-assg2
 ```
-All project files are now available in ~/cpc357-assg2.
 
-
-Option B: Alternative (HTTPS + PAT):
-If you prefer HTTPS, you can run:
+#### **Option B: HTTPS + PAT (Alternative)**
 ```bash
 git clone https://github.com/nandanjunior/cpc357-assg2.git
+# When prompted:
+# Username: nandanjunior
+# Password: <paste your Personal Access Token>
 ```
-When prompted:
+---
 
-Username: nandanjunior
+### 6️⃣ Install Python Dependencies
+```bash
+# Inside your virtual environment
+pip install -r requirements.txt
 
-Password: paste your Personal Access Token (PAT)
+# If requirements.txt is missing or incomplete
+pip install numpy opencv-python 
+```
+
+---
+
+### 7️⃣ Install OpenCV System Dependencies
+On minimal Linux VM, OpenCV may fail due to missing libraries:
+```bash
+sudo apt install -y libgl1
+```
+✅ This ensures no `libGL.so.1` import errors occur.
+
+---
+
+### 8️⃣ Run the Project
+With the virtual environment active:
+```bash
+# Sequential version
+cd src
+python3 main.py
+```
 
 ---
 

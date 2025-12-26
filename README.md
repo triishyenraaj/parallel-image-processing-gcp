@@ -64,8 +64,6 @@ The pipeline is identical across all execution modes to ensure **fair comparison
 
 Experiments can be executed on:
 - Google Cloud Platform (Compute Engine)
-- Ubuntu Linux VM
-- Multi-core CPU environment
 
 The system is also compatible with local machines.
 

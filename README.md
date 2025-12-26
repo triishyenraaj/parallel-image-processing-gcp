@@ -86,54 +86,32 @@ Speedup and efficiency are computed programmatically for consistency and reprodu
 
 ## 📁 Project Structure
 
+```text
 image_parallel_project/
-
 │
-
 ├── data/
-
 │   ├── input/                 # Generated dataset subset (ignored by git)
-
 │   └── output/                # Processed images (ignored by git)
-
 │
-
 ├── experiments/
-
 │   └── timings.csv            # Execution results (ignored by git)
-
 │
-
 ├── scripts/
-
 │   └── prepare_input_dataset.py
-
 │
-
 ├── src/
-
 │   ├── filters.py
-
 │   ├── pipeline.py
-
 │   ├── sequential.py
-
 │   ├── multiprocessing_version.py
-
 │   ├── futures_version.py
-
 │   ├── utils.py
-
 │   └── main.py
-
 │
-
 ├── requirements.txt
-
 ├── .gitignore
-
 └── README.md
-
+```
 ---
 
 ## 📂 Dataset Management

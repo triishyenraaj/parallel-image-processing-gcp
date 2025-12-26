@@ -183,18 +183,26 @@ Option A: SSH Key Setup (Recommended)
 ssh-keygen -t ed25519 -C "nandanjunior@github"
 ```
 Press Enter to accept defaults for file location.
+
 Press Enter twice for no passphrase.
+
 Copy your public key:
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
 2. Copy the entire output starting with ssh-ed25519.
+
 Add the public key to GitHub:
+
 Go to GitHub SSH Keys
+
 Title: Google Cloud CST435
+
 Key: paste the copied public key
+
 Click Add SSH key
+
 Test SSH connection: (optional)
 ```bash
 ssh -T git@github.com

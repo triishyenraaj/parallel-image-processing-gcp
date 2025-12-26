@@ -166,11 +166,6 @@ source venv/bin/activate
 
 sudo apt install git
 git --version
-
-git clone git@github.com:nandanjunior/cpc357-assg2.git
-
-pip3 install requirements.txt
-numpy opencv-python   # also install pandas if needed
 ```
 
 ---

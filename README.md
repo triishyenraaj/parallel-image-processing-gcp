@@ -240,17 +240,57 @@ python3 main.py
 
 ---
 
-## 📈 Output
+📈 **Output**
+Results are saved in: `experiments/timings.csv`
+- Including columns:
+  - `mode`
+  - `workers`
+  - `time_seconds`
+  - `speedup`
+  - `efficiency`
 
-Results are saved in:
-experiments/timings.csv
+---
 
-Including:
-- mode
-- workers
-- time_seconds
-- speedup
-- efficiency
+### 🔹 Option 1: View the file directly on the VM
+While connected via SSH:
+```bash
+# Go to the folder containing the file
+cd ~/cpc357-assg2/experiments
+
+# List files
+ls
+
+# View contents
+cat timings.csv
+
+# Or open with a pager
+less timings.csv
+```
+- `cat` prints the whole file to the terminal.
+- `less` lets you scroll up/down.
+
+### 🔹 Option 2: Download the file to your local machine
+
+#### A. Using scp (from your local machine terminal)
+```bash
+scp <USERNAME>@<VM_EXTERNAL_IP>:~/cpc357-assg2/experiments/timings.csv .
+```
+- Replace `<USERNAME>` with your VM username (`nandanjunior`).
+- Replace `<VM_EXTERNAL_IP>` with your VM’s external IP (find it in Google Cloud Console → VM instances).
+- The `.` at the end means download to current local folder.
+
+Example:
+```bash
+scp nandanjunior@34.101.23.45:~/cpc357-assg2/experiments/timings.csv .
+```
+
+#### B. Using the browser SSH session (Google Cloud Console)
+1. While in the browser SSH terminal, go to the file folder:
+```bash
+cd ~/cpc357-assg2/experiments
+```
+2. Use the three-dot menu → Download file in the Google Cloud Console SSH window.
+- Click on `timings.csv` → it will download to your local computer.
 
 ---
 

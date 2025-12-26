@@ -238,7 +238,6 @@ sudo apt install -y libgl1
 ### 8️⃣ Run the Project
 With the virtual environment active:
 ```bash
-# Sequential version
 cd src
 python3 main.py
 ```

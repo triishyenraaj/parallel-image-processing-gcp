@@ -92,12 +92,10 @@ image_parallel_project/
 ├── data/
 │   ├── input/                 # Generated dataset subset (ignored by git)
 │   └── output/                # Processed images (ignored by git)
+│   └── prepare_input_dataset.py
 │
 ├── experiments/
 │   └── timings.csv            # Execution results (ignored by git)
-│
-├── scripts/
-│   └── prepare_input_dataset.py
 │
 ├── src/
 │   ├── filters.py

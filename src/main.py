@@ -32,7 +32,7 @@ def main():
     ensure_dir(seq_output)
 
     t_seq = run_sequential(image_paths, seq_output)
-    results.append(("sequential", 1, t_seq))
+    results.append(("sequential", 1, t_seq, 1.0, 1.0))
     print(f"Sequential time: {t_seq:.4f} seconds")
 
     # 2. Multiprocessing runs
@@ -42,8 +42,11 @@ def main():
         ensure_dir(mp_output)
 
         t_mp = run_multiprocessing(image_paths, mp_output, workers)
-        results.append(("multiprocessing", workers, t_mp))
-        print(f"Time: {t_mp:.4f} seconds")
+        speedup = t_seq / t_mp
+        efficiency = speedup / workers
+
+        results.append(("multiprocessing", workers, t_mp, speedup, efficiency))
+        print(f"Time: {t_mp:.4f} seconds | Speedup: {speedup:.2f} | Efficiency: {efficiency:.2f}")
 
     # 3. concurrent.futures runs
     for workers in WORKER_COUNTS:
@@ -52,17 +55,21 @@ def main():
         ensure_dir(fut_output)
 
         t_fut = run_futures(image_paths, fut_output, workers)
-        results.append(("futures", workers, t_fut))
-        print(f"Time: {t_fut:.4f} seconds")
+        speedup = t_seq / t_fut
+        efficiency = speedup / workers
+
+        results.append(("futures", workers, t_fut, speedup, efficiency))
+        print(f"Time: {t_fut:.4f} seconds | Speedup: {speedup:.2f} | Efficiency: {efficiency:.2f}")
 
     # Save results to CSV
     with open(RESULTS_CSV, mode="w", newline="") as file:
         writer = csv.writer(file)
-        writer.writerow(["mode", "workers", "time_seconds"])
+        writer.writerow(["mode", "workers", "time_seconds", "speedup", "efficiency"])
         writer.writerows(results)
 
     print("All experiments completed.")
     print(f"Results saved to {RESULTS_CSV}")
+
 
 
 if __name__ == "__main__":

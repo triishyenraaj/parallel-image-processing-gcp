@@ -186,12 +186,12 @@ Press Enter to accept defaults for file location.
 
 Press Enter twice for no passphrase.
 
-Copy your public key:
+2. Copy your public key:
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
 
-2. Copy the entire output starting with ssh-ed25519.
+Copy the entire output starting with ssh-ed25519.
 
 Add the public key to GitHub:
 
@@ -208,7 +208,9 @@ Test SSH connection: (optional)
 ssh -T git@github.com
 ```
 You should see:
+
 Hi nandanjunior! You've successfully authenticated, but GitHub does not provide shell access.
+
 ✅ Once SSH is set up, you never need a password again.
 
 3. Clone the Repository
@@ -227,8 +229,11 @@ If you prefer HTTPS, you can run:
 git clone https://github.com/nandanjunior/cpc357-assg2.git
 ```
 When prompted:
+
 Username: nandanjunior
+
 Password: paste your Personal Access Token (PAT)
+
 ---
 
 ## 📈 Output

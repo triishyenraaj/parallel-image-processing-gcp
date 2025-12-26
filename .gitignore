@@ -1,0 +1,30 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+
+# =========================
+# Virtual Environments
+# =========================
+venv/
+.env/
+
+# =========================
+# Dataset & Outputs
+# =========================
+data/input/
+data/output/
+
+# =========================
+# Experiment Results
+# =========================
+experiments/timings.csv
+
+# =========================
+# OS / IDE
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

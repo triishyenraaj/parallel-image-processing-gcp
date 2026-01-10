@@ -195,13 +195,13 @@ Hi nandanjunior! You've successfully authenticated, but GitHub does not provide 
 - Clone the repository:
 ```bash
 cd ~
-git clone git@github.com:nandanjunior/cpc357-assg2.git
-cd cpc357-assg2
+git clone git@github.com:nandanjunior/cst435-assg2.git
+cd cst435-assg2
 ```
 
 #### **Option B: HTTPS + PAT (Alternative)**
 ```bash
-git clone https://github.com/nandanjunior/cpc357-assg2.git
+git clone https://github.com/nandanjunior/cst435-assg2.git
 # When prompted:
 # Username: nandanjunior
 # Password: <paste your Personal Access Token>
@@ -255,7 +255,7 @@ Results are saved in: `experiments/timings.csv`
 While connected via SSH:
 ```bash
 # Go to the folder containing the file
-cd ~/cpc357-assg2/experiments
+cd ~/cst435-assg2/experiments
 
 # List files
 ls
@@ -273,7 +273,7 @@ less timings.csv
 
 #### A. Using scp (from your local machine terminal)
 ```bash
-scp <USERNAME>@<VM_EXTERNAL_IP>:~/cpc357-assg2/experiments/timings.csv .
+scp <USERNAME>@<VM_EXTERNAL_IP>:~/cst435-assg2/experiments/timings.csv .
 ```
 - Replace `<USERNAME>` with your VM username (`nandanjunior`).
 - Replace `<VM_EXTERNAL_IP>` with your VM’s external IP (find it in Google Cloud Console → VM instances).
@@ -281,13 +281,13 @@ scp <USERNAME>@<VM_EXTERNAL_IP>:~/cpc357-assg2/experiments/timings.csv .
 
 Example:
 ```bash
-scp nandanjunior@34.101.23.45:~/cpc357-assg2/experiments/timings.csv .
+scp nandanjunior@34.101.23.45:~/cst435-assg2/experiments/timings.csv .
 ```
 
 #### B. Using the browser SSH session (Google Cloud Console)
 1. While in the browser SSH terminal, go to the file folder:
 ```bash
-cd ~/cpc357-assg2/experiments
+cd ~/cst435-assg2/experiments
 ```
 2. Use the three-dot menu → Download file in the Google Cloud Console SSH window.
 - Click on `timings.csv` → it will download to your local computer.
